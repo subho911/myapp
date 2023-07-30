@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NbSidebarService, NbMenuService } from '@nebular/theme';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'myapp';
+  constructor(private sidebarService: NbSidebarService,
+    private menuService: NbMenuService) {
+  }
+
+  title = 'my-ngadmin-app';
+
+  toggleSidebar(): boolean {
+    this.sidebarService.toggle(true, 'menu-sidebar');
+
+    return false;
+  }
+
+  navigateHome() {
+    this.menuService.navigateHome();
+    return false;
+  }
 }
