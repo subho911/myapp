@@ -7,7 +7,6 @@ import { NbMenuItem } from '@nebular/theme';
   styleUrls: ['./app-menu.component.scss']
 })
 export class AppMenuComponent {
-
   items: NbMenuItem[] = [
     {
       title: 'Profile',
